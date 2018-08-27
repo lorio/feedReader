@@ -82,16 +82,19 @@ $(function() {
         beforeEach((done) => {
             loadFeed(0, () => {
                 entry1 = document.querySelector('.entry').innerText;
-                 console.log(entry1);  
+                 console.log(entry1);
+                 done()  
                 loadFeed(1, () => {
                     entry2 = document.querySelector('.entry').innerText;
                     console.log(entry2);
+                    done()
                 }); 
             });   done();              
         });
-            it('loads new content', () => {
+            it('loads new content', ((done) => {
                 expect(entry1).not.toEqual(entry2);
-           }); 
+                done();
+           })); 
         
     });
 }());

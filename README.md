@@ -17,6 +17,9 @@ See the original Frontend Nanodegree Repository for details.
 
 ## Thanks
 Thanks to Udacity staff and students including Matthew Cranford Getting started, and Ivan Project Coach. 
+[Jasmine cheatsheet]https://devhints.io/jasmine
+[Jasmine Introduction]https://jasmine.github.io/2.0/introduction
+
 
 
 

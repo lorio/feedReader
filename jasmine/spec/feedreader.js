@@ -44,9 +44,9 @@ $(function() {
         it('is hidden', function() {
             expect(body.classList).toContain('menu-hidden');
         });
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
+         /* Test ensures the menu changes visibility 
+          * when the menu icon is clicked, with
+          * two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
         it('changes visibility', function(){
@@ -55,17 +55,13 @@ $(function() {
             menuIcon.click();
             expect(body.classList).toContain('menu-hidden');
         });
-
     });
-    /* TODO: Write a new test suite named "Initial Entries" */
+    /* Test suite for "Initial Entries" */
     describe('Initial Entries', function() {
-       const feed = document.querySelector('.feed');
-        
-        /* TODO: Write a test that ensures when the loadFeed
+       const feed = document.querySelector('.feed');    
+        /* Test ensures when the asynchronous loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
-         * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          beforeEach((done) => {
             loadFeed(0, done);        
@@ -76,25 +72,19 @@ $(function() {
      });
     /* A New feed loads new content */
     describe('New Feed Selection', function() {
-       // const feed = document.querySelector('.feed');
-        let entry1, entry2;
-        
+        let entry1, entry2,
+            feed = document.querySelector('.feed');       
         beforeEach((done) => {
             loadFeed(0, () => {
-                entry1 = document.querySelector('.entry').innerText;
-                 console.log(entry1);
-                 done()  
+                entry1 = feed.innerHTML;
                 loadFeed(1, () => {
-                    entry2 = document.querySelector('.entry').innerText;
-                    console.log(entry2);
+                    entry2 = feed.innerHTML;
                     done()
                 }); 
-            });   done();              
+            });            
         });
-            it('loads new content', ((done) => {
-                expect(entry1).not.toEqual(entry2);
-                done();
-           })); 
-        
+        it('loads new content', () => {
+            expect(entry1).not.toEqual(entry2);
+       });        
     });
 }());

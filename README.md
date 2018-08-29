@@ -5,6 +5,9 @@ This front-end Nanodegree project comprises a web-based application that reads R
 ## Instructions
 
 Practice test-driven development with Jasmine by testing the functionality of the feed reader menu and the feeds themselves to ensure that each is unique and loads as expected.
+1. start at the top and examine the first test which was done for you. Break it to see how Jasmine shows a failing test, then return it to its passing state. Describe RSS Feeds. Test for properties.
+2.  Create a new test suite to check if the menu is hidden by default and toggles visibility. With a separate test for each.
+3.  In a new test suite, check the async loadFeed function to see if it loads a single entry and if the next loaded entry is unique. 
 
 ## Dependencies
 

@@ -42,7 +42,7 @@ $(function() {
        // menuOpen = body.classlist
         /* menu element should be hidden by default.*/
         it('is hidden', function() {
-            expect(body.classList).toContain('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
          /* Test ensures the menu changes visibility 
           * when the menu icon is clicked, with
@@ -51,23 +51,26 @@ $(function() {
           */
         it('changes visibility', function(){
             menuIcon.click();
-            expect(body.classList).not.toContain('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
             menuIcon.click();
-            expect(body.classList).toContain('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
     });
-    /* Test suite for "Initial Entries" */
+    /* Test suite for "Initial Entries" ensures when the asynchronous 
+         * loadFeed function is called and completes its work, there is at least
+         * a single .entry element within the .feed container.*/
     describe('Initial Entries', function() {
-       const feed = document.querySelector('.feed');    
-        /* Test ensures when the asynchronous loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         */
+      let entry1, 
+        feed = document.querySelector('.feed');    
          beforeEach((done) => {
-            loadFeed(0, done);        
-         })
+            loadFeed(0, () => {        
+              entry1 = feed.innerHTML;
+              done();
+            })
+          })
          it('contains an entry', () => {
-            expect(feed.children.length).toBeGreaterThan(0);
+          console.log(entry1);
+            expect($.contains(document.feed.entry1, document.feed));
          })
      });
     /* A New feed loads new content */

@@ -12,7 +12,7 @@ Practice test-driven development with Jasmine by testing the functionality of th
 ## Dependencies
 
 [Jasmine](http://jasmine.github.io/)
-[Original provided code, resources and instructions]https://github.com/udacity/frontend-nanodegree-feedreader
+[Original provided code, resources and detailed instructions]https://github.com/udacity/frontend-nanodegree-feedreader
 
 
 ## Contributing
@@ -20,7 +20,7 @@ See the original Frontend Nanodegree Repository for details.
 
 ## Thanks
 Thanks to Udacity staff and students including Matthew Cranford Getting started, and Ivan Project Coach. 
-[Jasmine cheatsheet]https://devhints.io/jasmine
+[Jest cheatsheet]https://devhints.io/jest
 [Jasmine Introduction]https://jasmine.github.io/2.0/introduction
 
 

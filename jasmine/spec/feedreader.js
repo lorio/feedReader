@@ -60,17 +60,17 @@ $(function() {
          * loadFeed function is called and completes its work, there is at least
          * a single .entry element within the .feed container.*/
     describe('Initial Entries', function() {
-      let entry1, 
-        feed = document.querySelector('.feed');    
+      let entry, 
+        container = $('.feed');    
          beforeEach((done) => {
             loadFeed(0, () => {        
-              entry1 = feed.innerHTML;
+              entry = $('.entry');
               done();
             })
           })
          it('contains an entry', () => {
-          console.log(entry1);
-            expect($.contains(document.feed.entry1, document.feed));
+          console.log(entry);
+            expect(entry.length).toBeGreaterThan(0);
          })
      });
     /* A New feed loads new content */
